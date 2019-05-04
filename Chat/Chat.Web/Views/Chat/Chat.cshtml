@@ -1,0 +1,18 @@
+﻿@model Chat.Web.Models.Chat.ChatModel
+@using Chat.Web.Models.Chat
+
+@{
+    ViewBag.Title = "Chat";
+}
+
+<div id="RefreshArea">
+        @Html.Partial("ChatInfo", Model);
+</div>
+
+@Html.Partial("InputMessage", new MessageViewModel())
+
+@section scripts {
+    @Scripts.Render("~/Scripts/chat-module.js")
+}
+
+

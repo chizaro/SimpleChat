@@ -1,0 +1,17 @@
+﻿@model Chat.Web.Models.Chat.MessageViewModel
+
+<div id="inputForm">
+    <table>
+            <tr>
+                <td rowspan="2">
+                    @Html.TextAreaFor(model => model.Text, new { id = "new-message", rows = 3 })
+                </td>
+                <td>
+                    <button id="send-message" data-url="@Url.Action("RenderMessage", "Chat")">Отправить </button>
+                </td>
+            </tr>
+            <tr>
+                <td><button id="leave" data-url="@Url.Action("Logout", "Chat")" value="Выйти">Выйти</button></td>
+            </tr>
+        </table>
+</div>

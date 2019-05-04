@@ -1,0 +1,25 @@
+﻿@model Chat.Web.Models.Chat.ChatModel
+
+<div id="users">
+    <p><b>В чате онлайн: @Model.Users.Count</b></p>
+    @foreach (var user in Model.Users)
+    {
+        <p>@user.Name</p>
+    }
+</div>
+<div id="messages">
+    @foreach (var message in Model.Messages)
+    {
+        <p>
+            @message.PublishDate<br />
+            @if (message.User != null)
+            {
+                <b>@(message.User.Name + ":")</b> @message.Text
+            }
+            else
+            {
+                <span class="message">@message.Text</span>
+            }
+        </p>
+    }
+</div>

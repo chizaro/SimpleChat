@@ -1,0 +1,13 @@
+﻿@model Chat.Web.Models.Chat.LoginViewModel
+<div id="container">
+    <div id="loginBlock">
+        @using (Html.BeginForm("Login"))
+        {
+            @Html.AntiForgeryToken()
+            @Html.LabelFor(model => model.Name)
+            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { id = "txtUserName", autocomplete = "off" } })
+            <input type="submit" id="btnLogin" value="Войти"><br />
+            @Html.ValidationMessageFor(model => model.Name)
+        }
+    </div>
+</div>
